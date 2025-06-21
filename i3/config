@@ -198,4 +198,10 @@ exec --no-startup-id pactl load-module module-bluetooth-policy
 exec --no-startup-id pactl load-module module-bluetooth-discover
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms 
+exec --no-startup-id xrandr --output DP-0 --mode "5120x1440"
 exec --no-startup-id xset r rate 300 50
+
+
+for_window [class="ModernGL"] floating enable
+for_window [class="ModernGL"] resize set 1280 720
+for_window [class="ModernGL"] move left 1800px
