@@ -190,6 +190,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position bottom
+        mode dock
+        hidden_state hide
+        modifier $mod
 }
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 # exec  /usr/bin/pasystray
