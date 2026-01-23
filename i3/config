@@ -151,6 +151,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym --release $mod+Shift+s exec /usr/bin/gnome-screenshot -acf /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png
 bindsym --release $mod+Shift+w exec feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
+bindsym $mod+F5 exec --no-startup-id brightnessctl set 10%-
+bindsym $mod+F6 exec --no-startup-id brightnessctl set +10%
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
