@@ -153,6 +153,8 @@ bindsym --release $mod+Shift+w exec feh --randomize --bg-fill ~/Pictures/Wallpap
 
 bindsym $mod+F5 exec --no-startup-id brightnessctl set 10%-
 bindsym $mod+F6 exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -d intel_backlight set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d intel_backlight set 10%-
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
