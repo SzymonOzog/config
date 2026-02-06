@@ -75,10 +75,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
+bindsym $mod+Shift+j mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
+bindsym $mod+Shift+k mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
+bindsym $mod+Shift+l mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -198,6 +198,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+exec --no-startup-id /home/oz/.screenlayout/home_layout.sh
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
+exec --no-startup-id compton
+exec  /usr/bin/pasystray
+exec --no-startup-id pactl load-module module-bluetooth-policy
+exec --no-startup-id pactl load-module module-bluetooth-discover
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms 
+exec --no-startup-id xset r rate 300 50
+
+
+for_window [class="ModernGL"] floating enable
+for_window [class="ModernGL"] resize set 1280 720
+for_window [class="ModernGL"] move left 1900px
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -207,17 +221,3 @@ bar {
         hidden_state hide
         modifier $mod
 }
-exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
-# exec  /usr/bin/pasystray
-exec --no-startup-id compton
-exec --no-startup-id pactl load-module module-bluetooth-policy
-exec --no-startup-id pactl load-module module-bluetooth-discover
-exec --no-startup-id xset s off
-exec --no-startup-id xset -dpms 
-exec --no-startup-id xrandr --output DP-0 --mode "5120x1440"
-exec --no-startup-id xset r rate 300 50
-
-
-for_window [class="ModernGL"] floating enable
-for_window [class="ModernGL"] resize set 1280 720
-for_window [class="ModernGL"] move left 1900px
