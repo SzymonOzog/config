@@ -1,4 +1,4 @@
-apt install i3 tmux clang feh compton pasystray
+apt install i3 tmux clang feh compton pasystray scrot
 wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage
 chmod u+x nvim.appimage 
 mv ./nvim.appimage /usr/bin/nvim
